@@ -66,7 +66,7 @@ class CachedFileBackend(object):
         key = self.get_key(file)
         state = self.cache.get(key)
         if state is None and check_if_unknown:
-            exists = self._exists(file)
+            exists = False #self._exists(file)
             state = CacheFileState.EXISTS if exists else CacheFileState.DOES_NOT_EXIST
             self.set_state(file, state)
         return state
