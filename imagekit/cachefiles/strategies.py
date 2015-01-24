@@ -32,6 +32,22 @@ class Optimistic(object):
     def should_verify_existence(self, file):
         return False
 
+class NoFikar(object):
+    """
+    A strategy that acts immediately when the source file changes and assumes
+    that the cache files will not be removed (i.e. it doesn't ensure the
+    cache file exists when it's accessed).
+
+    """
+    def on_existence_required(self, file):
+        file.generate()
+
+    def on_content_required(self, file):
+        file.generate()
+
+    def on_source_saved(self, file):
+        file.generate()
+
 
 class DictStrategy(object):
     def __init__(self, callbacks):
