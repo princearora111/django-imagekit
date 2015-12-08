@@ -38,7 +38,7 @@ setup(
     maintainer='Bryan Veloso',
     maintainer_email='bryan@revyver.com',
     license='BSD',
-    url='http://github.com/matthewwithanm/django-imagekit/',
+    url='http://github.com/princearora111/django-imagekit/',
     packages=find_packages(),
     zip_safe=False,
     include_package_data=True,
